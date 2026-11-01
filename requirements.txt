@@ -1,0 +1,8 @@
+mlflow>=3.1
+requests>=2.31
+pandas>=2.0
+python-dotenv>=1.0
+jupyter>=1.0
+ipykernel>=6.0
+pytest>=8.0
+reportlab>=4.0
