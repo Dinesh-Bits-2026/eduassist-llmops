@@ -169,10 +169,17 @@ def image_flowable(path, caption, styles):
     return KeepTogether([Spacer(1, 6), framed, Spacer(1, 4), para(caption, styles["cap"]), Spacer(1, 12)])
 
 
+def link(url: str, color: str = "#1F5FBF") -> str:
+    u = escape(url)
+    return f'<a href="{u}" color="{color}">{u}</a>'
+
+
 def banner(styles):
     inner = [para("LLMOps: API Cost, Latency and Prompt Version Management", styles["btitle"]),
              para("Experiential Learning Assignment 2 - MLOps (AIML ZG523)", styles["bsub"]),
-             para(f"{config.STUDENT_NAME} | {config.STUDENT_ID} | {date.today():%d %b %Y}", styles["bsub"])]
+             para(f"{config.STUDENT_NAME} | {config.STUDENT_ID} | {date.today():%d %b %Y}", styles["bsub"]),
+             Paragraph(f"Code: {link(config.GITHUB_URL, '#9FD3FF')} | Video: {link(config.VIDEO_URL, '#9FD3FF')}",
+                       styles["bsub"])]
     t = Table([[inner]], colWidths=[PAGE_W])
     t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), NAVY),
                            ("LEFTPADDING", (0, 0), (-1, -1), 14), ("RIGHTPADDING", (0, 0), (-1, -1), 14),
@@ -276,6 +283,9 @@ def main() -> int:
 
     add("5. Promotion justification", "justification", "callout_green")
     add("6. Limitations", "limitations")
+    story.extend(heading("7. Links", S))
+    story.append(Paragraph(f"<b>GitHub repository:</b> {link(config.GITHUB_URL)}", S["p"]))
+    story.append(Paragraph(f"<b>Video walkthrough:</b> {link(config.VIDEO_URL)}", S["p"]))
 
     config.REPORT_DIR.mkdir(exist_ok=True)
     SimpleDocTemplate(str(config.REPORT_PDF), pagesize=A4, leftMargin=2 * cm, rightMargin=2 * cm,

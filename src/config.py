@@ -28,6 +28,10 @@ PRICING_CURRENCY = os.getenv("PRICING_CURRENCY", "USD")
 STUDENT_NAME = os.getenv("STUDENT_NAME", "Student Name")
 STUDENT_ID = os.getenv("STUDENT_ID", "Student ID")
 
+# Project links (public, not secrets); override with env vars if needed
+GITHUB_URL = os.getenv("GITHUB_URL", "https://github.com/Dinesh-Bits-2026/eduassist-llmops")
+VIDEO_URL = os.getenv("VIDEO_URL", "https://youtu.be/8lZP50saGuI")
+
 # Assignment constants
 MONTHLY_REQUESTS = 10_000
 EXPERIMENT_NAME = "eduassist_llmops_assignment"

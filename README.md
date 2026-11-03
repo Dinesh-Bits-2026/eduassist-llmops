@@ -5,6 +5,11 @@ Course: MLOps (AIML ZG523), BITS Pilani WILP. Individual experiential learning a
 
 An academic Q&A assistant must return strict JSON. Three prompt versions (v1 Basic, v2 Structured, v3 JSON Output) are run on the same five questions. Latency, tokens and cost are measured, the prompts are versioned in the MLflow Prompt Registry, and the best one is promoted with the `production` alias.
 
+## Links
+
+- **GitHub repository:** https://github.com/Dinesh-Bits-2026/eduassist-llmops
+- **Video walkthrough:** https://youtu.be/8lZP50saGuI
+
 ## Repository layout
 
 ```
